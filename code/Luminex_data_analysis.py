@@ -421,7 +421,7 @@ plt.savefig(result_folder+"Figure S1B.png", dpi=500, transparent=True, bbox_inch
 
 #============================================================================================#
 #============================================================================================#
-# Figure 2C
+# Figure 2
 
 # Define parameters
 final_antigen_list = ["O1v1-EPA", "O1v2-HSA", "O3b-EPA"]
@@ -526,11 +526,11 @@ for outerind, subfig in enumerate(subfigs.flat):
         p.tick_params(left=False)
 
 fig.tight_layout()
-plt.savefig(result_folder+"Figure 2C.png", dpi=500, transparent=True, bbox_inches='tight')
+plt.savefig(result_folder+"Figure 2.png", dpi=500, transparent=True, bbox_inches='tight')
 
 #============================================================================================#
 #============================================================================================#
-# Figure S3
+# Figure S4
 
 # Define parameters
 final_antigen_list = ["O2v1-HSA", "O2v2-EPA", "O3/O3a-HSA","O5-HSA"]
@@ -620,11 +620,11 @@ for outerind, subfig in enumerate(subfigs.flat):
         p.tick_params(left=False)
 
 fig.tight_layout()
-plt.savefig(result_folder+"Figure S3.png", dpi=500, transparent=True, bbox_inches='tight')
+plt.savefig(result_folder+"Figure S4.png", dpi=500, transparent=True, bbox_inches='tight')
 
 #============================================================================================#
 #============================================================================================#
-# Figure S7
+# Figure S8
 
 # Create lists for HC and BC data
 HC_list = [index for index in combined_data.index if "HC" in index]
@@ -697,11 +697,11 @@ for antigen in final_antigen_list:
     
     # Save the figure
     antigen_name = antigen.replace("/", "")
-    plt.savefig(result_folder+f"Figure S7_{antigen_name}_Kpn.png", dpi=500, transparent=True, bbox_inches='tight')
+    plt.savefig(result_folder+f"Figure S8_{antigen_name}_Kpn.png", dpi=500, transparent=True, bbox_inches='tight')
 
 #============================================================================================#
 #============================================================================================#
-# Figure S6A
+# Figure S7A
 
 # Filter the data for O1v1 and O1v2 O-types
 filtered_data = combined_data[combined_data['O-type'].isin(['O1v1', 'O1v2'])]
@@ -782,11 +782,11 @@ for outerind, subfig in enumerate(subfigs.flat):
         axs[1].tick_params(left=False)
 
 fig.tight_layout()
-plt.savefig(result_folder+"Figure S6A.png", dpi=300, transparent=True, bbox_inches='tight')
+plt.savefig(result_folder+"Figure S7A.png", dpi=300, transparent=True, bbox_inches='tight')
 
 #============================================================================================#
 #============================================================================================#
-# Figure S6B
+# Figure S7B
 
 # Filter the data for O1v1 and O1v2 O-types
 filtered_data2 = combined_data_highest_value_foldchange[combined_data_highest_value_foldchange['O-type'].isin(['O1v1', 'O1v2'])]
@@ -845,7 +845,7 @@ for outerind, ax in enumerate(axs.flat):
         ax.set_ylabel(antibody+" fold change", fontsize=14, weight='bold')
     
 fig.tight_layout()
-plt.savefig(result_folder+"Figure S6B.png", dpi=300, transparent=True, bbox_inches='tight')
+plt.savefig(result_folder+"Figure S7B.png", dpi=300, transparent=True, bbox_inches='tight')
 
 #============================================================================================#
 #============================================================================================#
@@ -912,7 +912,7 @@ plt.savefig(result_folder+"Figure 4B.png", dpi=300, transparent=True, bbox_inche
 
 #============================================================================================#
 #============================================================================================#
-# Figure S8
+# Figure S9
 
 # Define the final antigen list
 final_antigen_list = ["O2v1-HSA", "O2v2-EPA", "O5-HSA","MrkA"]
@@ -971,7 +971,7 @@ for outerind, ax in enumerate(axs.flat):
         ax.set_ylabel(antibody+" fold change", fontsize=14, weight='bold')
 
 fig.tight_layout()
-plt.savefig(result_folder+"Figure S8.png", dpi=300, transparent=True, bbox_inches='tight')
+plt.savefig(result_folder+"Figure S9.png", dpi=300, transparent=True, bbox_inches='tight')
 
 #============================================================================================#
 #============================================================================================#
@@ -1118,7 +1118,7 @@ plt.savefig(result_folder+"Figure 4A.png", dpi=300, transparent=True, bbox_inche
 
 #============================================================================================#
 #============================================================================================#
-# Figure S5
+# Figure S6
 
 # Load the O1Kpn_capsule data
 O1Kpn_capsule = pd.read_excel(base_path+"O1Kpn_capsule.xlsx")
@@ -1188,14 +1188,14 @@ def plot_spearman_correlation(df, x_col, y_col, title, filename):
     plt.savefig(result_folder+filename, transparent=True, dpi=300, bbox_inches='tight')
 
 # Plot for O1v1-EPA
-plot_spearman_correlation(O1Kpn_O1v1EPA_df, "Glucuronic_acid", "O1v1-EPA", "O1v1-EPA Correlation", "Figure S5_O1v1-EPA.png")
+plot_spearman_correlation(O1Kpn_O1v1EPA_df, "Glucuronic_acid", "O1v1-EPA", "O1v1-EPA Correlation", "Figure S6_O1v1-EPA.png")
 
 # Plot for O1v2-HSA
-plot_spearman_correlation(O1Kpn_O1v2HSA_df, "Glucuronic_acid", "O1v2-HSA", "O1v2-HSA Correlation", "Figure S5_O1v2-HSA.png")
+plot_spearman_correlation(O1Kpn_O1v2HSA_df, "Glucuronic_acid", "O1v2-HSA", "O1v2-HSA Correlation", "Figure S6_O1v2-HSA.png")
 
 #============================================================================================#
 #============================================================================================#
-# Figure S4
+# Figure S5
 
 # Mapping dictionaries
 o_antigen_to_epa_hsa = {
@@ -1277,6 +1277,6 @@ p.set_xlabel("")
 axs.tick_params(axis='y', labelsize=12)
 axs.tick_params(axis='x', labelsize=14)
 plt.tight_layout()
-plt.savefig(result_folder+"Figure S4.png",transparent=True, dpi=300,bbox_inches='tight')
+plt.savefig(result_folder+"Figure S5.png",transparent=True, dpi=300,bbox_inches='tight')
 #============================================================================================#
 #============================================================================================#
